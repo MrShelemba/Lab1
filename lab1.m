@@ -21,7 +21,7 @@ n =  0:N-1;
 x =  double(n==5);
 y =  double(n==7);
 class(x) 
-figure(1.1)
+figure(1)
 subplot(2,1,1), stem(x)
 subplot(2,1,2), stem(y-2)
 
@@ -30,7 +30,7 @@ subplot(2,1,2), stem(y-2)
 N =  201;
 n =  0:N-1;
 x =  cos(pi*n/16);
-figure(1.2)
+figure(2)
 subplot(3,1,1), stem(x)
 subplot(3,1,2), plot(x)
 subplot(3,1,3), stairs(x)
@@ -43,8 +43,22 @@ x2 =  (-0.8).^n;
 x3 =  (1.1).^n;
 x4 =  (-1.1).^n;
 
-figure(1.3)
+figure(3)
 subplot(4,1,1), stem(x1)
 subplot(4,1,2), stem(x2)
 subplot(4,1,3), stem(x3)
 subplot(4,1,4), stem(x4)
+
+%=== ???????? #1.4 - 1.6 ===
+%?1.5
+%?1.6
+% ??????????? ????? ???????
+fs = 1000;
+t =  0:1/fs:2;
+x =  3*sin(6*pi*t)+5*sin(16*pi*t);
+pks = pksdetect(x);
+figure(4)
+plot(t,x,'k-'); hold on;
+plot(t(pks),x(pks),'k*'); hold off;
+xlabel('time(s)'); ylabel('x(t)');
+
